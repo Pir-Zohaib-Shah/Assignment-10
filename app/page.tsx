@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from "react";
 import { Merriweather } from "@next/font/google"
+import Image from "next/image";
 
 const candal = Merriweather({
   subsets: ["latin"],
@@ -51,7 +52,7 @@ export default function Home() {
             key={book.id}
             className="bg-white text-black shadow-md rounded-lg overflow-hidden w-52 transform hover:scale-105 transition-all duration-200 relative"
           >
-            <img
+            <Image
               src={book.image}
               alt={book.title}
               className="w-52 object-cover"

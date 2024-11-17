@@ -10,7 +10,7 @@ interface Book {
 }
 
 // Sample in-memory books array
-let books: Book[] = [
+const books: Book[] = [
   { id: 1, title: "The Hunger Games", author: "Suzanne Collins", available: true, image: "/the_hunger_games.png" },
   { id: 2, title: "Harry Potter", author: "J.K Rowling", available: false, image: "/harry_potter.png" },
   { id: 3, title: "Pride and Prejudice", author: "Jane Austen, Anna Quindlen", available: true, image: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1320399351i/1885.jpg" },

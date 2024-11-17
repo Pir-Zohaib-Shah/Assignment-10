@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import { Merriweather } from "@next/font/google";
 import { 
   AlertDialog, 
@@ -12,6 +12,7 @@ import {
   AlertDialogAction, 
   AlertDialogCancel 
 } from '@/components/ui/alert-dialog'; // Import ShadCN AlertDialog components
+import Image from "next/image";
 
 const merriweather = Merriweather({
   subsets: ["latin"],
@@ -39,7 +40,7 @@ export default function Admin() {
   });
   const [editBook, setEditBook] = useState<Book | null>(null); // Track the book being edited
   const [bookToDelete, setBookToDelete] = useState<Book | null>(null); // Store the book to delete
-  const router = useRouter();
+  // const router = useRouter();
 
   // Fetch books data from the API
   useEffect(() => {
@@ -194,14 +195,14 @@ export default function Admin() {
         {books.map((book) => (
           <div key={book.id} className="bg-white shadow-md rounded-lg mb-4 p-4 w-64 relative text-black">
             <div className="flex items-center mb-11">
-              <img
+              <Image
                 src={book.image}
                 alt={book.title}
                 className="w-16 h-16 object-cover rounded-lg mr-4 mb-6"
               />
               <div className="flex-grow">
-                <h3 className="text-xl font-semibold">{book.title}</h3>
-                <p className="text-gray-700">Author: {book.author}</p>
+                <h3 className="text-xl font-semibold"> {book.title}</h3>
+                <p className="text-gray-700">Author: &quot;{book.author}&quot;</p>
                 <p className={`text-sm ${book.available ? "text-green-500" : "text-red-500"}`}>
                   {book.available ? "Available" : "Not Available"}
                 </p>
@@ -225,7 +226,7 @@ export default function Admin() {
                     <AlertDialogHeader>
                       <AlertDialogTitle className="text-black">Edit Book</AlertDialogTitle>
                       <AlertDialogDescription>
-                        Modify the details of "<strong>{editBook.title}</strong>"
+                        Modify the details of <strong>{editBook.title}</strong>
                       </AlertDialogDescription>
                     </AlertDialogHeader>
 
@@ -292,7 +293,7 @@ export default function Admin() {
                   <AlertDialogHeader>
                     <AlertDialogTitle className="text-black">Delete Book</AlertDialogTitle>
                     <AlertDialogDescription>
-                      Are you sure you want to delete "{book.title}"?
+                      Are you sure you want to delete <strong>{book.title}</strong>?
                     </AlertDialogDescription>
                   </AlertDialogHeader>
                   <div className="flex justify-between">
