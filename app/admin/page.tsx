@@ -198,6 +198,8 @@ export default function Admin() {
               <Image
                 src={book.image}
                 alt={book.title}
+                width={500}
+                height={500}
                 className="w-16 h-16 object-cover rounded-lg mr-4 mb-6"
               />
               <div className="flex-grow">

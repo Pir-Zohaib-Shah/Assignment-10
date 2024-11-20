@@ -55,7 +55,9 @@ export default function Home() {
             <Image
               src={book.image}
               alt={book.title}
-              className="w-52 object-cover"
+              width={208}
+              height={500}
+              className="object-cover"
             />
             <div className="p-4">
               <h3 className="text-xl font-semibold">{book.title}</h3>
